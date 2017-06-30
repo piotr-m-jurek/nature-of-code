@@ -1,22 +1,3 @@
-// class Walker {
-//   constructor (x, y) {
-//     this.x = x
-//     this.y = y
-//   }
-
-//   display () {
-//     stroke(255)
-//     ellipse(this.x, this.y, 10, 10)
-//   }
-//   step () {
-//     const stepx = random(-1, 1)
-//     const stepy = random(-1, 1)
-//     this.x += stepx
-//     this.y += stepy
-//   }
-// }
-
-
 function setup () {
   createCanvas(800,600)
 

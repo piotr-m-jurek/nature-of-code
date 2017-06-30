@@ -17,7 +17,7 @@ function draw () {
   const y = radius * sin(angle)
   fill(angle % 255, 255,255)
   noStroke()
-  const size = map(radius,0,2*PI,1,1.25)
+  const size = map(radius,0,2*PI,1.1,1.25)
   ellipse(x,y, size, size)
   n++
 }
