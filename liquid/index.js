@@ -1,4 +1,6 @@
-const wind = new p5.Vector(0.01, 0) 
+let T = 0 
+// let wind
+// let wind = new p5.Vector(0.01, 0)
 const gravity = new p5.Vector(0, 0.1)
 const a = 10
 let balls = []
@@ -17,18 +19,21 @@ function setup () {
 }
 
 function draw () {
+
+  wind = new p5.Vector(noise(T) -0.5, 0) 
   background(51)
   noStroke()
   fill(32)
   rect(0, height / 2, width, height / 2)
   balls.forEach(ball => {
-    const m = ball.mass
+    // const m = p5.Vector.mult(gravity, ball.mass)
     ball.applyForce(gravity)
-    ball.applyForce(wind)
+    // ball.applyForce(wind)
     ball.move()
     ball.checkEdges()
     ball.display()
   })
+  T += 0.01
 }
 
 class Ball {
@@ -61,6 +66,15 @@ class Ball {
       this.location.y = height
       this.velocity.y *= -1
     }
+    if (this.location.x < 0) {
+      this.location.x = 0
+      this.velocity.x *= -1
+    }
+    if (this.location.y < 0) {
+      this.location.y = 0
+      this.velocity.y *= -1
+    }
+
   }
 
   display () {
