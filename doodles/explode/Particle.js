@@ -1,26 +1,3 @@
-let t = 0
-const gravity = new p5.Vector(0, 0.1)
-let particles = new Array()
-const num = 500
-function setup () {
-    createCanvas(640, 480)
-    background(51)
-    for(let i = 0; i < num; i++) {
-      particles.push(new Particle())
-    }
-    colorMode(HSB)
-}
-
-function draw () {
-  background(51)
-  particles.forEach(p => {
-    p.update()
-    p.checkEdges()
-    p.render(t)
-  })
-  t+=0.1
-}
-
 class Particle {
   constructor () {
     this.pos = new p5.Vector(width / 2, height / 2)

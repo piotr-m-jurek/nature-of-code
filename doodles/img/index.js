@@ -10,6 +10,6 @@ function draw () {
   const randY = random(0,height)
   noStroke()
   const c = img.get(randX,randY)
-  fill(c)
+  fill(c, 40)
   ellipse(randX, randY, 10, 10)
 }
