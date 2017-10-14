@@ -5,16 +5,30 @@ canvas.height = window.innerHeight
 canvas.width = window.innerWidth
 canvas.style.background = `rgb(51, 51, 51)`
 
-const ball = new Mover(120, 45, 10)
+const mouse = new Vector()
 
+document.addEventListener('mousemove', function(e) {
+  const pos = getMousePos(e)
+  mouse.x = pos.x
+  mouse.y = pos.y
+})
+
+const ball = new Mover(120, 45, 10)
+const balls = []
+
+for (let i = 0; i < 50; i++ ) {
+  balls.push(new Mover(10))
+}
 function draw () {
   clearBackground()
-  ball.setAcc = {x: Math.random()* 2 - 1, y: Math.random()* 2 - 1}
-  ball.update()
-  ball.checkEdges()
-  ball.display()
-
+  balls.forEach(ball => {
+    ball.followMouse(mouse)
+    ball.checkEdges()
+    ball.display()
+  })
+  
   requestAnimationFrame(draw)
 }
 
 requestAnimationFrame(draw)
+

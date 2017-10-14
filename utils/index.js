@@ -7,6 +7,18 @@ class Vector {
     this.x = x,
     this.y = y
   }
+  static add (v1, v2) {
+    return new Vector(v1.x + v2.x, v1.y + v2.y)
+  }
+  static sub (v1, v2) {
+    return new Vector(v1.x - v2.x, v1.y - v2.y)    
+  }
+  static mult (v1, param) {
+    return new Vector(v1.x * param, v1.y * param)    
+  }
+  static div (v1, param) {
+    return new Vector(v1.x / param, v1.y / param)    
+  }
   add({x, y}) {
     this.x += x,
     this.y += y
@@ -37,5 +49,12 @@ class Vector {
       this.normalize()
       this.mult(max)
     }
+  }
+}
+
+function getMousePos(evt) {
+  return {
+    x: evt.clientX,
+    y: evt.clientY
   }
 }

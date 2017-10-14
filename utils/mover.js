@@ -1,6 +1,6 @@
 class Mover {
-  constructor (x, y, maxSpeed) {
-    this.location = new Vector(x, y)
+  constructor (maxSpeed) {
+    this.location = new Vector(Math.random() * canvas.width, Math.random() * canvas.height)
     this.velocity = new Vector()
     this.acceleration = new Vector()
     this.maxSpeed = maxSpeed
@@ -9,7 +9,15 @@ class Mover {
     this.velocity.add(this.acceleration)
     this.velocity.limit(this.maxSpeed)
     this.location.add(this.velocity)
-    console.log(this.location)
+  }
+  followMouse (position) {
+    const dir = Vector.sub(position, this.location)
+    dir.normalize()
+    dir.mult(0.5)
+    this.acceleration = dir
+    this.velocity.add(this.acceleration)
+    this.velocity.limit(this.maxSpeed)
+    this.location.add(this.velocity)
   }
   display () {
     ctx.fillStyle = `rgb(255, 255, 255)`
