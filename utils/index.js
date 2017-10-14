@@ -18,7 +18,7 @@ class Vector {
   mag() {
     return Math.sqrt((this.x * this.x) + (this.y * this.y))
   }
-  multiply (num) {
+  mult (num) {
     this.x *= num
     this.y *= num
   }
@@ -29,7 +29,13 @@ class Vector {
   normalize () {
     const m = this.mag()
     if (m !=0) {
-      this.div()
+      this.div(m)
+    }
+  }
+  limit (max) {
+    if (this.mag() > max) {
+      this.normalize()
+      this.mult(max)
     }
   }
 }
