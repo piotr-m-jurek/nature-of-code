@@ -38,5 +38,10 @@ class Particle {
       this.vel.y *= -1
     }
   }
+  clear () {
+    if (this.pos.x > width ||this.pos.y > height || this.pos.x < 0 || this.pos.y < 0) {
+      
+    }
+  }
 
 }

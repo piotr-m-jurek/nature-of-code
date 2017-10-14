@@ -9,7 +9,9 @@ class Walker {
     ctx.strokeRect(this.x, this.y, this.size, this.size)
   }
   move () {
-    this.x += (Math.random() * 2) - 1
-    this.y += (Math.random() * 2) - 1
+    let stepX = Math.floor(Math.random() * 3) - 1
+    let stepY = Math.floor(Math.random() * 3) - 1
+    this.x += stepX
+    this.y += stepY
   }
 }
