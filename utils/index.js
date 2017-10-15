@@ -50,11 +50,15 @@ class Vector {
       this.mult(max)
     }
   }
+  set coords ({x, y}) {
+    this.x = x
+    this.y = y
+  }
 }
 
-function getMousePos(evt) {
-  return {
-    x: evt.clientX,
-    y: evt.clientY
-  }
+function getMousePos(evt, canvas) {
+  const rect = canvas != null
+    ? canvas.getBoundingClientRect() 
+    : new Vector(0,0)
+  return new Vector(evt.clientX - rect.left, evt.clientY - rect.top)
 }
