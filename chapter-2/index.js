@@ -27,7 +27,6 @@ function draw () {
     m.update()
     m.display()
   })
-  console.log(mouse)
   requestAnimationFrame(draw)
 }
 
