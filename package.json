@@ -1,0 +1,17 @@
+{
+  "name": "nature-of-code",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:piotr-m-jurek/nature-of-code.git",
+  "author": "Piotr Małecki-Jurek <piotr.m.jurek@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server"
+  },
+  "dependencies": {
+    "webpack": "^3.8.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.9.3"
+  }
+}
