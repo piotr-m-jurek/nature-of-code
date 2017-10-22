@@ -1,14 +1,14 @@
 import Vector from './Vector'
+import { canvas, ctx } from './canvas'
 
-
-class Mover {
+export default class Mover {
   location: Vector
   velocity: Vector
   acceleration: Vector
   maxSpeed: number
   radius: number
   mass: number
-  constructor (mass: number) {
+  constructor(mass = 10) {
     this.location = new Vector()
     this.velocity = new Vector()
     this.acceleration = new Vector()
