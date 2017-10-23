@@ -1,5 +1,5 @@
-import Vector from './Vector'
-import { canvas, ctx } from './canvas'
+import Vector from './Vector.js'
+import { canvas, ctx } from './canvas.js'
 
 export default class Mover {
   location: Vector
@@ -22,7 +22,8 @@ export default class Mover {
     this.location.add(this.velocity)
   }
   randomize () {
-    this.location.add(new Vector(Math.random() * canvas.width, Math.random() * canvas.height))
+    let random = new Vector(Math.random() * canvas.width, Math.random() * canvas.height)
+    this.location.add(random)
   }
   followMouse (position: Vector) {
     position.normalize()

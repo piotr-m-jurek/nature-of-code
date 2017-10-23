@@ -1,5 +1,5 @@
-import { canvas, ctx } from './canvas'
-import Vector from './Vector'
+import { canvas, ctx } from './canvas.js'
+import Vector from './Vector.js'
 
 export function clearBackground() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);

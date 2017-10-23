@@ -17,13 +17,13 @@ export default class Vector {
   static div(v: Vector, param: number): Vector {
     return new Vector(v.x / param, v.y / param)
   }
-  add({ x, y }: Vector) {
-    this.x += x,
-      this.y += y
+  add(v: Vector) {
+    this.x += v.x
+    this.y += v.y
   }
-  subtract({ x, y }: Vector) {
-    this.x -= x
-    this.y -= y
+  subtract(v: Vector) {
+    this.x -= v.x
+    this.y -= v.y
   }
   mag(): number {
     return Math.sqrt((this.x * this.x) + (this.y * this.y))
